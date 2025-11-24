@@ -83,7 +83,7 @@ def build_options_flow(
     )
 
 
-class ConfigFlow(HAConfigFlow):
+class ConfigFlow(HAConfigFlow, domain=DOMAIN):
     """Config flow handler."""
 
     VERSION = 1
@@ -92,8 +92,9 @@ class ConfigFlow(HAConfigFlow):
         """Perform the initial step of the configuration flow, handling user input."""
         errors = {}
         if user_input is not None:
-            errors = are_urls_or_files(user_input["zone_urls"])
-            if errors:
+            if are_urls_or_files(user_input["zone_urls"]):
+                errors["zone_urls"] = "invalid_url_or_file"
+            else:
                 return self.async_create_entry(title="Polygonal Zones", data=user_input)
 
         user_input = user_input or {}
@@ -124,8 +125,9 @@ class OptionsFlowHandler(OptionsFlow):
         """Perform the initial step of the options flow, handling user input."""
         errors = {}
         if user_input is not None:
-            errors = are_urls_or_files(user_input["zone_urls"])
-            if not errors:
+            if are_urls_or_files(user_input["zone_urls"]):
+                errors["zone_urls"] = "invalid_url_or_file"
+            else:
                 self.hass.config_entries.async_update_entry(
                     self.config_entry, data=user_input
                 )

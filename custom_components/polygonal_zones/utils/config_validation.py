@@ -5,8 +5,8 @@ from urllib.parse import urlparse
 
 
 def are_urls_or_files(value: list[str]) -> bool:
-    """Validate that all values are either a URL or valid file path."""
-    return any(is_url_or_file(item) for item in value)
+    """Return True if any value is invalid (not a URL or file), False if all are valid."""
+    return not all(is_url_or_file(item) for item in value)
 
 
 def is_url_or_file(value: str) -> bool:
