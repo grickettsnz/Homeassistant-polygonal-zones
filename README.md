@@ -1,10 +1,8 @@
-> ⚠️ **Deprecation Notice**
+
+> ℹ️ **Notice**
 >
-> This project is no longer actively maintained.  
-> No further updates, bug fixes, or security patches will be provided.
-> Use at your own risk — issues and pull requests may not receive a response.
->
-> Please consider using alternative or updated solutions for future development.
+> This is a maintained fork of the original Polygonal Zones integration.
+> For updates, support, and the latest changes, use this repository: [grickettsnz/Homeassistant-polygonal-zones](https://github.com/grickettsnz/Homeassistant-polygonal-zones)
 
 # Polygonal Zones
 
@@ -20,7 +18,8 @@ Installing the integration can be done using hacs but also manually. Installatio
 ### Install using hacs
 To install the integration using hacs you can either add the url to your custom repositories or use the button below
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=MichelGerding&repository=Homeassistant-polygonal-zones&category=integration)
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=grickettsnz&repository=Homeassistant-polygonal-zones&category=integration)
 
 
 ### Manual installation
