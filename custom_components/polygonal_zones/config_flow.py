@@ -8,7 +8,7 @@ import voluptuous as vol
 
 from homeassistant.config_entries import (
     ConfigEntry,
-    ConfigFlow as EntryConfigFlow,
+    ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
@@ -83,7 +83,7 @@ def build_options_flow(
     )
 
 
-class ConfigFlow(EntryConfigFlow, domain=DOMAIN):
+class ConfigFlow(ConfigFlow):
     """Config flow handler."""
 
     VERSION = 1
